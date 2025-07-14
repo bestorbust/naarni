@@ -1,4 +1,3 @@
-import React from 'react';
 import './Careers.css';
 
 const Careers = () => (
