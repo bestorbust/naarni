@@ -1,5 +1,5 @@
 {
-  "name": "naarni-site",
+  "name": "naarni",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,12 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@coreui/coreui": "^5.4.1",
-    "@coreui/react": "^5.7.0",
-    "animate.css": "^4.1.1",
-    "bootstrap": "^5.3.7",
+    "@lottiefiles/react-lottie-player": "^3.6.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.525.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.0",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
@@ -28,6 +30,6 @@
     "globals": "^16.3.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
-    "vite": "^7.0.3"
+    "vite": "^7.0.4"
   }
 }
