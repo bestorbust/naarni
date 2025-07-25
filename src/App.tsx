@@ -7,7 +7,7 @@ import TrackRecord from './pages/TrackRecord';
 import Careers from './pages/Careers';
 
 import Navbar from './components/Navbar';
-
+import ScrollToTop from "./components/ScrollToTop";
 
 const App=()=>{
   return(
@@ -21,6 +21,7 @@ const App=()=>{
         <Route path="/track-record" element={<TrackRecord/>}/>
         <Route path="/careers" element={<Careers/>}/>
       </Routes>
+      <ScrollToTop/>
     </Router>
   )
 }
