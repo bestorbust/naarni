@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { MdEco } from 'react-icons/md';
 import { FaBatteryFull } from 'react-icons/fa';
 import { FaDesktop } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 // const parallaxImages = [
 //   "/images/road1.jpg",
@@ -71,18 +72,17 @@ const Home: React.FC = () => {
                 Best‑in‑class products, smart financing, reliable charging, and battery assurance – all in one ecosystem.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a
+                {/* <a
                   href="/products"
                   className="bg-[#3B82F6] hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition text-center"
                 >
                   Explore Products
-                </a>
-                <a
-                  href="/contact"
-                  className="bg-white hover:bg-[#CBD5E1] text-[#1E40AF] px-6 py-3 rounded-lg shadow transition text-center"
-                >
-                  Contact for Fleet Orders
-                </a>
+                </a> */}
+                <Link
+                  to="/contact"
+                  className="bg-[#3B82F6] hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition text-center">
+                    Contact
+                </Link>
               </div>
             </div>
             {/* <div className="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center">
