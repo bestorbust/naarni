@@ -1,5 +1,6 @@
 import React from "react";
 import { Linkedin, Facebook, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const palette = {
@@ -33,19 +34,19 @@ const Footer: React.FC = () => {
           </h3>
           <ul className="space-y-1 text-[15px]">
             <li>
-              <a href="/" style={{ color: palette.text }}>
+              <Link to="/" style={{ color: palette.text }}>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" style={{ color: palette.text }}>
+              <Link to="/about" style={{ color: palette.text }}>
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" style={{ color: palette.text }}>
+              <Link to="/contact" style={{ color: palette.text }}>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -57,9 +58,9 @@ const Footer: React.FC = () => {
           </h3>
           <ul className="space-y-1 text-[15px]">
             <li>
-              <a href="/careers" style={{ color: palette.text }}>
+              <Link to="/careers" style={{ color: palette.text }}>
                 Careers
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
