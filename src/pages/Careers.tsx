@@ -102,7 +102,7 @@ const Careers: React.FC = () => {
                   key={i}
                   className="rounded-xl p-6 text-center shadow hover:shadow-lg hover:scale-105 transition bg-white"
                 >
-                  <Lottie loop={false} play={false} animationData={item.anim} className="w-20 h-20 mx-auto mb-4" />
+                  <Lottie loop={false} play animationData={item.anim} className="w-20 h-20 mx-auto mb-4" />
                   <h3 className="text-lg sm:text-xl font-semibold text-[#3B82F6]">{item.title}</h3>
                   <p className="text-[#374151] text-sm sm:text-base mt-2">{item.desc}</p>
                 </div>
