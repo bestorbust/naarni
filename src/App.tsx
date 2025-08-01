@@ -8,10 +8,12 @@ import Careers from './pages/Careers';
 
 import Navbar from './components/Navbar';
 import ScrollToTop from "./components/ScrollToTop";
+import BackToTopButton from "./components/BackToTopButton";
 
 const App=()=>{
   return(
     <Router>
+      <ScrollToTop/>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -21,7 +23,7 @@ const App=()=>{
         <Route path="/track-record" element={<TrackRecord/>}/>
         <Route path="/careers" element={<Careers/>}/>
       </Routes>
-      <ScrollToTop/>
+      <BackToTopButton/>
     </Router>
   )
 }
