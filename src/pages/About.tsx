@@ -8,7 +8,8 @@ import Battery from "../assets/lotties/battery.json";
 import CO2 from "../assets/lotties/co2.json";
 import GreenEnergy from "../assets/lotties/green-energy.json";
 import EarthAnim from "../assets/lotties/earth-sustainability.json";
-
+import { InView } from "react-intersection-observer";
+import Footer from "../components/Footer";
 import AnkitImg from "../assets/founders/ankit.jpg";
 import AnandImg from "../assets/founders/anand.jpg";
 
@@ -16,6 +17,7 @@ const cardStyle:React.CSSProperties={
     backgroundColor: "rgba(255,255,255,0.05)",
     backdropFilter:"blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
 };
 
 const parallaxImages=[
@@ -47,6 +49,12 @@ const About:React.FC=()=>{
         }
         return{};
     };
+    const palette = {
+        background: "#F9F7F7",
+        secondary: "#DBE2EF",
+        primary: "#3F72AF",
+        dark: "#112D4E",
+};
 
     const founders=[
         {
@@ -116,22 +124,28 @@ const About:React.FC=()=>{
 
 
     return(
-        <div className="bg-gray-900 pt-16 text-gray-300">
-            <section className="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-20"
-            style={getParallaxStyle(0)}
-            >
-                <div
-                    className="absolute inset-0 bg-black opacity-50 pointer-events-none"
-                    aria-hidden="true"
-                    style={{ zIndex: 0 }}/>
-                <div
-                className="md:w-1/2 text-center md:text-left relative z-10 p-6 rounded"
-                style={cardStyle}>
-                    <h1 className="text-5xl md:text-6xl font-bold text-[#B8F306] leading-snug">
+        <div className=" text-[#111827]" style={{ backgroundColor: palette.background }}>
+              {/* Hero Section */}
+              <InView triggerOnce threshold={0.4}>
+                {({ inView, ref }) => (
+                  <section
+                    ref={ref}
+                    className={`transition-all duration-1000 ease-out transform ${
+                      inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    } relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-20`}
+                    style={getParallaxStyle(0)}
+                  >
+                    <div
+                      className="absolute inset-0 bg-black opacity-50 pointer-events-none"
+                      aria-hidden="true"
+                      style={{ zIndex: 0 }}
+                    />
+                    <div className="md:w-2/3 text-center md:text-left relative z-10 p-6 rounded mt-9" style={cardStyle}>
+                      <h1 className="text-5xl md:text-6xl font-bold leading-snug text-white">
                         About {" "}
-                        <span className="bg-[#B8F306]/80 text-gray-900 px-3 rounded-lg">NaArNi</span>
+                        <span className="px-3 rounded bg-[#3B82F6] text-white">NaArNi</span>
                     </h1>
-                    <p className="mt-4 text-gray-400 max-w-md font-medium">
+                    <p className="mt-4 max-w-md text-[#F8FAFC]">
                         NaArNi is transforming{" "}
                         <strong>Heavy Commercial Vehicles (HCVs)</strong> with best-in-class
                         electric buses. Our mission is to make{" "}
@@ -146,117 +160,140 @@ const About:React.FC=()=>{
                     loop play animationData={EVFuture} className="w-100 md:w-[450px]"/>
                     </div>
             </section>
+            )}
+            </InView>
             
-            <section className="py-16 bg-gray-700">
-                <h2 className="text-4xl font-bold text-center text-[#B8F306]">
-                    Meet Our Founders
-                </h2>
-                <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto mt-10">
-                    {founders.map((f, i) =>(
+            {/* Founders Section */}
+            <section className="py-16 bg-[#CBD5E1]/30">
+                <InView triggerOnce threshold={0.1}>
+                    {({ inView, ref }) => (
                         <div
-                        key={i}
-                        className="rounded-xl p-6 w-72 text-center shadow hover:shadow-lg hover:scale-105 transition"
-                        style={cardStyle}
+                            ref={ref}
+                            className={`transition-all duration-1000 ease-out transform ${
+                                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                            }`}
                         >
-                            <img
-                            src={f.img}
-                            alt={f.name}
-                            className="w-28 h-28 mx-auto rounded-full object-cover border-4 border-[#B8F306]/60"/>
-                            <h3 className="mt-4 text-teal-400 font-semibold">{f.name}</h3>
-                            <p className="text-gray-400 text-sm">{f.role}</p>
-                            <p className="text-gray-500 text-xs mt-2">{f.bio}</p>
-                            <a
-                            href={f.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-3 inline-block bg-[#B8F306]/80 text-gray-900 text-sm px-4 py-2 rounded-lg hover:bg-[#B8F306] transition">LinkedIn Profile</a>
+                            <h2 className="text-4xl font-bold text-center text-[#1E40AF]">
+                                Meet Our Founders
+                            </h2>
+                            <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto mt-10">
+                                {founders.map((f, i) =>(
+                                    <div
+                                    key={i}
+                                    className="rounded-xl p-6 w-72 text-center shadow hover:shadow-lg hover:scale-105 transition bg-white"
+                                    >
+                                        <img
+                                        src={f.img}
+                                        alt={f.name}
+                                        className="w-28 h-28 mx-auto rounded-full object-cover border-4 border-[#3B82F6]/60"/>
+                                        <h3 className="mt-4 text-[#1E40AF] font-semibold">{f.name}</h3>
+                                        <p className="text-[#111827] text-sm">{f.role}</p>
+                                        <p className="text-[#6B7280] text-xs mt-2">{f.bio}</p>
+                                        <a
+                                        href={f.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-3 inline-block bg-[#3B82F6] text-white text-sm px-4 py-2 rounded-lg hover:bg-[#1E40AF] transition">LinkedIn Profile</a>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
-                </div>
+                    )}
+                </InView>
             </section>
 
-
-            <section className="py-16 bg-gray-900 relative" style={getParallaxStyle(2)}>
-            <div
-                className="absolute inset-0 bg-black opacity-50 pointer-events-none"
-                aria-hidden="true"
-                style={{ zIndex: 0 }} />
-                <h2 className="text-4xl font-bold text-center text-[#B8F306] relative z-10">
-                    Supporting Fleet Operators End-to-End
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mt-10 px-4">
-                    {cards.map((item,i)=>(
+            {/* Supporting Fleet Operators Section */}
+            <section className="py-16 bg-[#CBD5E1]/30">
+                <InView triggerOnce threshold={0.1}>
+                    {({ inView, ref }) => (
                         <div
-                        key={i}
-                        className="rounded-xl shadow hover:shadow-lg hover:scale-105 transition p-6 text-center"
-                        style={cardStyle}
+                            ref={ref}
+                            className={`transition-all duration-1000 ease-out transform ${
+                                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                            }`}
                         >
-                            <Lottie
-                            loop play animationData={item.anim} className="w-24 h-24 mx-auto mb-4"/>
-                            <h3 className="text-lg font-semibold text-teal-400">{item.title}</h3>
-                            <p className="text-gray-400 text-sm mt-2">{item.desc}</p>
+                            <h2 className="text-4xl font-bold text-center text-[#1E40AF]">
+                                Supporting Fleet Operators End-to-End
+                            </h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mt-10 px-4">
+                                {cards.map((item,i)=>(
+                                    <div
+                                    key={i}
+                                    className="rounded-xl shadow hover:shadow-lg hover:scale-105 transition p-6 text-center bg-white"
+                                    >
+                                        <Lottie
+                                        loop play animationData={item.anim} className="w-24 h-24 mx-auto mb-4"/>
+                                        <h3 className="text-lg font-semibold text-[#1E40AF]">{item.title}</h3>
+                                        <p className="text-[#111827] text-sm mt-2">{item.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
-                </div>
+                    )}
+                </InView>
             </section>
 
-            <section className="py-16 bg-gray-700">
-                <h2 className="text-4xl font-bold text-center text-[#B8F306]">EV Impact</h2>
-                <div className="flex flex-wrap justify-center gap-10 mt-10 text-center">
-                    {impactStats.map((stats,i)=>(
+            {/* EV Impact Section */}
+            <section className="py-16 bg-[#CBD5E1]/30">
+                <InView triggerOnce threshold={0.1}>
+                    {({ inView, ref }) => (
                         <div
-                        key={i}
-                        className="w-52 rounded-xl shadow hover:shadow-lg transition p-4"
-                        style={cardStyle}
+                            ref={ref}
+                            className={`transition-all duration-1000 ease-out transform ${
+                                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                            }`}
                         >
-                            <Lottie
-                            loop play animationData={stats.anim} className="w-24 h-24 mx-auto"/>
-                            <p className="text-2xl text-teal-400 font-bold">{stats.value}</p>
-                            <p className="text-gray-400 text-sm">{stats.label}</p>
+                            <h2 className="text-4xl font-bold text-center text-[#1E40AF]">EV Impact</h2>
+                            <div className="flex flex-wrap justify-center gap-10 mt-10 text-center">
+                                {impactStats.map((stats,i)=>(
+                                    <div
+                                    key={i}
+                                    className="w-52 rounded-xl shadow hover:shadow-lg transition p-4 bg-white"
+                                    >
+                                        <Lottie
+                                        loop play animationData={stats.anim} className="w-24 h-24 mx-auto"/>
+                                        <p className="text-2xl text-[#1E40AF] font-bold">{stats.value}</p>
+                                        <p className="text-[#111827] text-sm">{stats.label}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
-                </div>
+                    )}
+                </InView>
             </section>
 
-            <section className="py-16 bg-gray-900" style={getParallaxStyle(4)}>
-                <div
-                    className="absolute inset-0 bg-black opacity-50 pointer-events-none"
-                    aria-hidden="true"
-                    style={{ zIndex: 0 }} />
-                <h2 className="text-4xl font-bold text-center text-[#B8F306] relative z-10">NaArNi Vision 2030</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10 px-4">
-                    {vision2030.map((item,i)=>(
+            {/* Vision 2030 Section */}
+            <section className="py-16 bg-[#CBD5E1]/30">
+                <InView triggerOnce threshold={0.1}>
+                    {({ inView, ref }) => (
                         <div
-                        key={i}
-                        className="rounded-xl p-6 text-center shadow hover:shadow-lg hover:scale-105 transition"
-                        style={cardStyle}
+                            ref={ref}
+                            className={`transition-all duration-1000 ease-out transform ${
+                                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                            } max-w-6xl mx-auto px-4 py-10`}
                         >
-                            <h3 className="text-xl font-semibold text-teal-400">{item.title}</h3>
-                            <p className="text-gray-400 text-sm mt-2">{item.desc}</p>
+                            <h2 className="text-4xl font-bold text-center text-[#1E40AF]">
+                                NaArNi Vision 2030
+                            </h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10">
+                                {vision2030.map((item,i)=>(
+                                    <div
+                                    key={i}
+                                    className="rounded-xl p-6 text-center shadow hover:shadow-lg hover:scale-105 transition bg-white"
+                                    >
+                                        <h3 className="text-xl font-semibold text-[#1E40AF]">{item.title}</h3>
+                                        <p className="text-[#111827] text-sm mt-2">{item.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ))}
-                </div>
+                    )}
+                </InView>
             </section>
 
-            <section className="py-12 bg-gradient-to-r from-teal-900 to-teal-600 text-center text-white">
-                <h2 className="text-3xl font-bold">
-                    Join Us in Building a {" "}
-                    <span className="bg-[#B8F306]/80 text-gray-800 px-2 rounded">
-                        Greener Future
-                    </span>
-                </h2>
-                <div className="mt-6 flex justify-center gap-4">
-                    <a
-                    href="/careers"
-                    className="bg-[#B8F306]/90 px-6 py-3 rounded-lg shadow text-gray-900 hover:bg-[#B8F306] transition">
-                        Explore Carrers</a>
-                </div>
-            </section>
+            <Footer/>
         </div>
 
     )
 }
 export default About;
-
-
-

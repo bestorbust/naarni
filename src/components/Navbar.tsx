@@ -18,9 +18,9 @@ const Navbar:React.FC=()=>{
 
     
     return(
-        <nav className="fixed top-6 left-10 right-10 z-50 bg-blue-900/40 backdrop-blur-md border border-blue-700 rounded-full shadow-lg">
+        <nav className="fixed top-6 left-10 right-10 z-50 bg-[#CBD5E1] backdrop-blur-md  rounded-lg shadow-lg">
             <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-                <Link to="/" className="text-[#B8F306] font-extrabold text-3xl tracking-wide px-3 py-1 rounded-lg hover:text-white transition">
+                <Link to="/" className="text-[#1E40AF] font-extrabold text-3xl tracking-wide px-3 py-1 rounded-lg hover:text-white transition">
                 NaArNi
                 </Link>
                 <div className="hidden md:flex space-x-8 items-center">
@@ -31,14 +31,14 @@ const Navbar:React.FC=()=>{
                         className={`relative font-semibold text-lg px-3 py-2 rounded-full transition-colors duration-300
                 ${
                     isActive(item.link)
-                    ? "text-white"
-                    : "text-blue-200 hover:text-[#B8F306]"
+                    ? "text-[#111827]"
+                    : "text-[#3B82F6] hover:text-[#1E40AF]"
                 }`}
             >
 
                             {item.name}
                             <span
-                            className={`absolute left-0 -bottom-1 h-0.5 w-full bg-[#B8F306] rounded origin-left transform transition-transform duration-300
+                            className={`absolute left-0 -bottom-1 h-0.5 w-full bg-[#1E40AF] rounded origin-left transform transition-transform duration-300
                   ${isActive(item.link) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}/>
                         </Link>
                     ))}

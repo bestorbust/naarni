@@ -1,178 +1,165 @@
-import React, {useState,useEffect} from "react";
+import React from "react";
 import Lottie from "react-lottie-player";
+import { InView } from "react-intersection-observer";
 import CareersTeam from "../assets/lotties/careers-team.json";
 import WorkSpace from "../assets/lotties/workspace.json";
 import Growth from "../assets/lotties/growth-success.json";
+import Footer from "../components/Footer";
 
-const cardStyle:React.CSSProperties={
-    backgroundColor: "rgba(255,255,255,0.05)",
-    backdropFilter:"blur(5px)",
-    WebkitBackdropFilter: "blur(5px)",
+const cardStyle: React.CSSProperties = {
+  backgroundColor: "rgba(255,255,255,0.1)",
+  backdropFilter: "blur(6px)",
+  WebkitBackdropFilter: "blur(6px)",
+  border: "1px solid rgba(255,255,255,0.15)",
 };
 
-const parallaxImages=[
-    "images/careers-hero.jpg",
-    "/images/open-positions.jpg",
-]
-const Careers:React.FC=()=>{
+const Careers: React.FC = () => {
+//   const [offsetY, setOffsetY] = useState(0);
 
-    const [offsetY,setOffsetY]=useState(0);
+//   useEffect(() => {
+//     const handleScroll = () => setOffsetY(window.pageYOffset);
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
 
-    useEffect(()=>{
-        const handleScroll=()=> setOffsetY(window.pageYOffset);
-        window.addEventListener("scroll",handleScroll);
-        return()=> window.removeEventListener("scroll",handleScroll);
-    },[]);
+  const whyWork = [
+    {
+      title: "Impactful Work",
+      desc: "Drive the EV revolution & make mobility greener.",
+      anim: WorkSpace,
+    },
+    {
+      title: "Innovative Culture",
+      desc: "Work with cutting-edge EV and IoT technologies.",
+      anim: Growth,
+    },
+    {
+      title: "Growth Opportunities",
+      desc: "Upskill and grow in the fastest-growing EV industry.",
+      anim: WorkSpace,
+    },
+  ];
 
-    const getParallaxStyle=(index:number)=>{
-        if(index%2===0){
-            return{
-                backgroundImage:`url(${parallaxImages[index/2]|| parallaxImages[0]})`,
-                backgroundSize:"cover",
-                backgroundPosition:`center ${-offsetY*0.3}px`,
-                backgroundAttachment:"fixed",
-                backgroundRepeat:"no-repeat",
-                position:"relative" as const,
+//   const jobs = [
+//     {
+//       role: "Founder Staff",
+//       location: "Bengaluru, India",
+//       exp: "3-4 yrs workex",
+//     },
+//     {
+//       role: "Data Analyst",
+//       location: "Bengaluru, India",
+//       exp: "3-4 yrs workex",
+//     },
+//     {
+//       role: "Aftersales Manager",
+//       location: "Bengaluru, India",
+//       exp: "10-15 yrs workex",
+//     },
+//     {
+//       role: "HR and Admin",
+//       location: "Bengaluru, India",
+//       exp: "3-4 yrs workex",
+//     },
+//   ];
 
-            };
-        }
-        return{};
-    };
+  return (
+    <div className="bg-[#F9F7F7] pt-16 text-[#1F2937]">
+      {/* Hero Section */}
+      <InView triggerOnce threshold={0.4}>
+        {({ inView, ref }) => (
+          <section
+            ref={ref}
+            className={`relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-20 transition-all duration-1000 ease-out transform ${
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <div className="md:w-1/2 text-center md:text-left p-6" style={cardStyle}>
+              <h1 className="text-5xl md:text-6xl font-bold text-[#1E40AF] leading-snug">
+                Join{" "}
+                <span className="bg-[#3B82F6]/90 text-white px-3 rounded-lg">
+                  Our Team
+                </span>
+              </h1>
+              <p className="mt-4 text-[#374151] max-w-md">
+                Be part of the Heavy EV revolution. Work with innovators building the future of sustainable transportation.
+              </p>
+            </div>
+            <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+              <Lottie loop play animationData={CareersTeam} className="w-80 md:w-[450px]" />
+            </div>
+          </section>
+        )}
+      </InView>
 
-    const whyWork=[
-        {
-            title:"Impactful Work",
-            desc:"Drive the EV revolution & make mobility greener.",
-            anim:WorkSpace,
-        },
-        {
-            title:"Innovative Culture",
-            desc:"Working with cutting-edge EV and IoT technologies.",
-            anim:Growth,
-        },
-        {
-            title:"Growth Opportunities",
-            desc:"Upskill and grow in the fastest-growing EV industry.",
-            anim:WorkSpace,
-        },
-        
-    ];
-    const jobs=[
-        {
-            role:"Founder Staff",
-            location:"Begaluru, India",
-            exp: "3-4 yrs workex",
-        },
-        {
-            role:"Data Analyst",
-            location:"Begaluru, India",
-            exp: "3-4 yrs workex",
-        },
-        {
-            role:"Aftersales Manager",
-            location:"Begaluru, India",
-            exp: "10-15 yrs workex",
-        },
-        {
-            role:"HR and Admin",
-            location:"Begaluru, India",
-            exp: "3-4 yrs workex",
-        },
-        
-    ]
-    return(
-        <div className="bg-gray-900 pt-16 text-gray-300" >
-            <section className="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-20"
-            style={getParallaxStyle(0)}>
+      {/* Why Work */}
+      <InView triggerOnce threshold={0.2}>
+        {({ inView, ref }) => (
+          <section
+            ref={ref}
+            className={`py-16 bg-[#E2E8F0]/50 transition-all duration-1000 ease-out transform ${
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <h2 className="text-4xl font-bold text-center text-[#1E40AF]">
+              Why Work at NaArNi?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10 px-4">
+              {whyWork.map((item, i) => (
                 <div
-                    className="absolute inset-0 bg-black opacity-50 pointer-events-none"
-                    aria-hidden="true"
-                    style={{ zIndex: 0 }}/>
-                <div className="md:w-1/2 text-center md:text-left relative z-10 p-6" style={cardStyle}>
-                    <h1 className="text-5xl md:text-6xl font-bold text-[#B8F306] leading-snug">
-                        Join {" "}
-                        <span className="bg-[#B8F306]/80 text-gray-900 px-3 rounded-lg">Our Team</span>
-                    </h1>
-                    <p className="mt-4 text-gray-300 max-w-md">
-                        Be part of the Heavy EV revolution. Work with innovators who are building the future of sustainable transportation.
+                  key={i}
+                  className="rounded-xl p-6 text-center shadow hover:shadow-lg hover:scale-105 transition bg-white"
+                >
+                  <Lottie loop play animationData={item.anim} className="w-24 h-24 mx-auto mb-3" />
+                  <h3 className="text-xl font-semibold text-[#3B82F6]">{item.title}</h3>
+                  <p className="text-[#374151] text-sm mt-2">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </InView>
+
+      {/* Open Positions */}
+      {/* <InView triggerOnce threshold={0.2}>
+        {({ inView, ref }) => (
+          <section
+            ref={ref}
+            className={`py-16 bg-[#F1F5F9] transition-all duration-1000 ease-out transform ${
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <h2 className="text-4xl font-bold text-center text-[#1E40AF]">
+              Open Positions
+            </h2>
+            <div className="max-w-5xl mx-auto mt-10 space-y-6 px-4">
+              {jobs.map((job, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col md:flex-row items-center justify-between rounded-xl p-6 shadow hover:shadow-lg bg-white transition"
+                >
+                  <div>
+                    <h3 className="text-xl font-bold text-[#3B82F6]">{job.role}</h3>
+                    <p className="text-[#4B5563] text-sm font-medium">
+                      {job.location} · {job.exp}
                     </p>
-                    </div>
-
-                    <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-                    <Lottie
-                    loop play animationData={CareersTeam} className="w-100 md:w-[450px]"/>
-                    </div>
-            </section>
-            
-            <section className="py-16 bg-gray-700" >
-                <h2 className="text-4xl font-bold text-center text-[#B8F306]">
-                    Why Work at NaArNi?
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-10 px-4">
-                    {whyWork.map((item,i)=>(
-                        <div
-                        key={i}
-                        className="rounded-xl p-6 text-center shadow hover:shadow-lg hover:scale-105 transition"
-                        style={cardStyle}
-                        >
-                            <Lottie
-                            loop play animationData={item.anim} className="w-24 h-24 mx-auto mb-3"/>
-                            <h3 className="text-xl font-semibold text-teal-400">
-                                {item.title}
-                            </h3>
-                            <p className="text-gray-300 text-sm mt-2">{item.desc}</p>
-                        </div>
-                    ))}
+                  </div>
+                  <a
+                    href="mailto:website@naarni.com"
+                    className="mt-4 md:mt-0 bg-[#B8F306] text-gray-900 font-semibold px-4 py-2 rounded-lg hover:bg-[#A7DC06] transition"
+                  >
+                    Apply Now
+                  </a>
                 </div>
-            </section>
-            
-            <section className="py-16 bg-gray-900 relative" style={getParallaxStyle(2)}>
-                <div
-                    className="absolute inset-0 bg-black opacity-20 pointer-events-none"
-                    aria-hidden="true"
-                    style={{ zIndex: 0 }} />
-                <h2 className="text-4xl font-bold text-center text-[#B8F306]">Open Positions</h2>
-                <div className="max-w-5xl mx-auto mt-10 space-y-6 px-4">
-                    {jobs.map((job,i)=>(
-                        <div
-                        key={i}
-                        className="flex flex-col md:flex-row items-center justify-between rounded-xl p-6 shadow hover:shadow-lg transition"
-                        style={cardStyle}
-                        >
-                            <div>
-                                <h3 className="text-xl font-bold text-teal-400">{job.role}</h3>
-                                <p className="text-gray-900 text-sm font-semibold">{job.location} . {job.exp}</p>
-                            </div>
-                            <a
-                            href="mailto:website@naarni.com"
-                            className="mt-4 md:mt=0 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">ApplyNow</a>
-                        </div>
-                    ))}
-                </div>
-            </section>
+              ))}
+            </div>
+          </section>
+        )}
+      </InView> */}
 
-            <section className="py-12 bg-gradient-to-r from-blue-900 to-blue-700 text-center text-white">
-                <h2 className="text-3xl font-bold">
-                    Want to Shape the {" "}
-                    <span
-                    className="px-2 rounded"
-                    style={{ backgroundColor: "rgba(184, 243, 6, 0.85)", color: "#1f2937" }}>
-                        EV Future?
-                    </span>
-                </h2>
-                <Lottie
-                loop play animationData={Growth} className="w-28 mx-auto my-4"/>
-                <div className="mt-6 flex justify-center gap-4">
-                    <a
-                    href="/contact"
-                    className="bg-teal-600 px-6 py-3 rounded-lg shadow hover:bg-purple-700 transition">
-                        Send Your Resume</a>
-                    
-                </div>
-            </section>
-        </div>
-
-    );
-
+      <Footer />
+    </div>
+  );
 };
+
 export default Careers;
