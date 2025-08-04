@@ -74,7 +74,7 @@ const Careers: React.FC = () => {
                 </span>
               </h1>
               <p className="mt-4 text-[#374151] text-base sm:text-lg max-w-md mx-auto md:mx-0">
-                Be part of the Heavy EV revolution. Work with innovators building the future of sustainable transportation.
+                Be part of the EV revolution. Work with innovators building the future of sustainable transportation.
               </p>
             </div>
             <div className="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center">

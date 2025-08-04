@@ -1,10 +1,10 @@
 import React from "react";
 import { InView } from "react-intersection-observer";
-import { Battery, PlugZap, Truck, Wallet, Wrench } from "lucide-react";
+import { Battery, PlugZap, Truck, Wallet, Wrench, DollarSign } from "lucide-react";
 import Footer from "../components/Footer";
-import { MdEco } from 'react-icons/md';
-import { FaBatteryFull } from 'react-icons/fa';
-import { FaDesktop } from 'react-icons/fa';
+// import { MdEco } from 'react-icons/md';
+// import { FaBatteryFull } from 'react-icons/fa';
+// import { FaDesktop } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 // const parallaxImages = [
@@ -13,6 +13,26 @@ import { Link } from "react-router-dom";
 // ];
 
 const Home: React.FC = () => {
+
+    const vision2030 = [
+      {
+        title: "EV as Default Choice",
+        desc: "Fleet operators choose EVs as their primary heavy vehicle option.",
+      },
+      {
+        title: "Trusted Brand & Ecosystem Leader",
+        desc: "NaArNi becomes the most trusted brand for fleet operators and the broader EV ecosystem.",
+      },
+      {
+        title: "20% Market Share in HCVs",
+        desc: "NaArNi to become a trusted leader in heavy commercial EVs.",
+      },
+      {
+        title: "Best Value & Reliability",
+        desc: "NaArNi synonymous with reliability and lowest cost per km.",
+      },
+    ];
+  
   // const [offsetY, setOffsetY] = useState(0);
 
   // useEffect(() => {
@@ -61,17 +81,21 @@ const Home: React.FC = () => {
             } flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-20 w-full`}
           >
             <div
-              className="w-full md:w-2/3 text-center md:text-left p-6 rounded mt-9"
+              className="w-full  text-center md:text-left p-6 rounded mt-9"
               style={cardStyle}
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-snug text-[#1E3A8A]">
+              {/* <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-snug text-[#1E3A8A]">
                 Empowering the Future of{" "}
                 <span className="px-3 rounded bg-[#3B82F6] text-white">Heavy EVs</span>
+              </h1> */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-snug text-[#1E3A8A]">
+                Electrifying Heavy Commercial Vehicles
+                {/* <span className="px-3 rounded bg-[#3B82F6] text-white">Heavy Commercial Vehicles</span> */}
               </h1>
-              <p className="mt-4 max-w-full md:max-w-md text-[#374151] mx-auto md:mx-0">
+              {/* <p className="mt-4 max-w-full md:max-w-md text-[#374151] mx-auto md:mx-0">
                 Best‑in‑class products, smart financing, reliable charging, and battery assurance – all in one ecosystem.
-              </p>
-              <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              </p> */}
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-center">
                 {/* <a
                   href="/products"
                   className="bg-[#3B82F6] hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition text-center"
@@ -80,8 +104,8 @@ const Home: React.FC = () => {
                 </a> */}
                 <Link
                   to="/contact"
-                  className="bg-[#3B82F6] hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition text-center">
-                    Contact
+                  className="bg-[#3B82F6] hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow transition text-center justify-center">
+                    Contact Us
                 </Link>
               </div>
             </div>
@@ -97,7 +121,7 @@ const Home: React.FC = () => {
       </InView>
 
       {/* Ecosystem Section - Tabbed Card Layout */}
-      <section className="py-16 bg-[#CBD5E1]/30">
+      {/* <section className="py-16 bg-[#CBD5E1]/30">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div
@@ -161,10 +185,133 @@ const Home: React.FC = () => {
             </div>
           )}
         </InView>
+      </section> */}
+
+      {/* Fleet Operators' Concerns */}
+      <section className="py-20 bg-[#CBD5E1]/30">
+        <InView triggerOnce threshold={0.1}>
+          {({ inView, ref }) => (
+            <div
+              ref={ref}
+              className={`transition-all duration-1000 ease-out transform ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              } max-w-5xl mx-auto px-6`}
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E3A8A]">
+                Fleet Operators Can Make More Money with EVs,
+              </h2>
+              <p className="text-center text-lg mt-2 mb-10">
+                But they still have many questions...
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  {
+                    title: "Product",
+                    icon: <Truck className="w-10 h-10" />,
+                    question: "Who do I buy from? What about quality?",
+                  },
+                  {
+                    title: "Finance",
+                    icon: <Wallet className="w-10 h-10" />,
+                    question: "Will I be able to get financing and from whom?",
+                  },
+                  {
+                    title: "Charging",
+                    icon: <PlugZap className="w-10 h-10" />,
+                    question: "Where do I find reliable and fast charging?",
+                  },
+                  {
+                    title: "Maintenance",
+                    icon: <Wrench className="w-10 h-10" />,
+                    question: "Who will maintain the electrical components?",
+                  },
+                  {
+                    title: "Resale",
+                    icon: <DollarSign className="w-10 h-10" />,
+                    question: "Can I resell and at what price?",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-6 bg-white border border-[#CBD5E1] rounded-xl shadow hover:shadow-lg hover:scale-[1.03] transition-all duration-300 flex flex-col items-center text-center"
+                  >
+                    <div className="text-[#1E40AF] mb-4">{item.icon}</div>
+                    <h3 className="text-xl font-semibold text-[#1E40AF] mb-2">{item.title}</h3>
+                    <p className="text-[#374151] italic font-medium">“{item.question}”</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </InView>
       </section>
 
+      {/*  NaArNi Ecosystem Solutions */}
+      <section className="py-20 bg-[#CBD5E1]/30">
+        <InView triggerOnce threshold={0.1}>
+          {({ inView, ref }) => (
+            <div
+              ref={ref}
+              className={`transition-all duration-1000 ease-out transform ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF]">
+                We Enable HCV Fleet Operators to Move to Electric
+              </h2>
+              <p className="text-center mt-2 text-[#111827] max-w-xl mx-auto px-4">
+                NaArNi offers best cost per km, reliability and availability.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto mt-12 px-4">
+                {[
+                  {
+                    name: "Product",
+                    answer: "Best-in-class range & efficiency with proven reliability.",
+                    imageAlt: "/images/Bus.png",
+                  },
+                  {
+                    name: "Financing",
+                    answer: "Access to long-term and cost-effective financing options.",
+                    imageAlt: "/images/finance.png",
+                  },
+                  {
+                    name: "Maintenance",
+                    answer: "Access to High-Voltage AMC through vehicle life.",
+                    imageAlt: "/images/maintenance.png",
+                  },
+                  {
+                    name: "Charging",
+                    answer: "Access to cost-effective and reliable charging options.",
+                    imageAlt: "/images/charging.png",
+                  },
+                  {
+                    name: "Battery",
+                    icon: <Battery className="w-10 h-10" />,
+                    answer: "Battery Replacement Assurance.",
+                    imageAlt: "/images/battery.png",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-xl p-6 shadow hover:shadow-xl hover:scale-105 bg-white transition-all duration-300 flex flex-col items-center text-center"
+                  >
+                    <img src={item.imageAlt}  alt={item.name} className="text-xs text-gray-400 mt-3 italic rounded-full object-cover"></img>
+                    {/* <div className="text-[#1E40AF] mb-4">{item.icon}</div> */}
+                    <h3 className="text-lg font-semibold text-[#1E40AF] mb-2">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm text-[#111827]">{item.answer}</p>
+                    </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </InView>
+      </section>
+
+
       {/* Why Choose Section */}
-      <section className="pt-5 bg-[#CBD5E1]/30">
+      {/* <section className="pt-5 bg-[#CBD5E1]/30">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div
@@ -200,7 +347,6 @@ const Home: React.FC = () => {
                   >
                     <div className="relative z-10 flex flex-col items-center text-center group-hover:text-[#1E40AF]">
                       {item.icon}
-                      {/* <img src={item.icon} alt={item.title} className="w-24 h-24 object-contain mb-4" /> */}
                       <h3 className="text-xl font-semibold">{item.title}</h3>
                       <p className="mt-2 max-w-xs">{item.text}</p>
                     </div>
@@ -211,23 +357,38 @@ const Home: React.FC = () => {
           )}
         </InView>
       </section>
+ */}
 
-      {/* Call to Action */}
+      {/* Vision 2030 */}
+      <section className="py-16 bg-[#CBD5E1]/30">
+        <InView triggerOnce threshold={0.1}>
+          {({ inView, ref }) => (
+            <div
+              ref={ref}
+              className={`transition-all duration-1000 ease-out transform ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              } max-w-6xl mx-auto px-4`}
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF]">
+                NaArNi Vision 2030
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
+                {vision2030.map((item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-xl p-6 text-center shadow hover:shadow-lg hover:scale-105 transition bg-white"
+                  >
+                    <h3 className="text-xl font-semibold text-[#1E40AF]">{item.title}</h3>
+                    <p className="text-[#111827] text-sm mt-2">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </InView>
+      </section>
 
       <Footer />
-      {/* <section className="py-12 bg-gradient-to-r from-[#1E40AF] to-[#3B82F6] text-center text-white">
-        <h2 className="text-3xl font-bold">
-          Ready to Drive the <span className="px-2 rounded bg-white text-[#1E40AF]">Future?</span>
-        </h2>
-        <div className="mt-6 flex justify-center gap-4">
-          <a
-            href="/contact"
-            className="bg-white hover:bg-[#CBD5E1] px-6 py-3 rounded-lg shadow transition text-[#1E40AF]"
-          >
-            Contact
-          </a>
-        </div>
-      </section> */}
     </div>
   );
 };
