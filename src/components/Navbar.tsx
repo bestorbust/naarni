@@ -29,29 +29,33 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [open]);
+
   return (
     <nav className="fixed z-50 w-full">
       {/* Background overlay for mobile menu */}
       {open && (
-        <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden z-40"
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm md:hidden z-40"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Main navbar */}
-      <div className={`relative transition-all duration-500 ease-out ${
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50' 
+      <div className={`transition-all duration-500 ease-out ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50'
           : 'bg-white/80 backdrop-blur-sm md:bg-white/90 md:backdrop-blur-md'
-      } top-0 left-0 right-0 absolute shadow-lg`}>
-        
+      } top-0 left-0 right-0 fixed z-50`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
           {/* Logo */}
-          <Link
-            to="/"
-            className="relative group"
-          >
+          <Link to="/" className="relative group">
             <div className="text-[#1E40AF] font-extrabold text-3xl tracking-wide px-4 py-2 rounded-xl transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-blue-800 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/25">
               NaArNi
             </div>
@@ -97,18 +101,22 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
-            <button 
+            <button
               onClick={() => setOpen(!open)}
-              className="p-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
+              className="p-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors duration-300 z-50 relative"
             >
-              {open ? <X size={24} className="text-gray-700" /> : <Menu size={24} className="text-gray-700" />}
+              {open ? (
+                <X size={24} className="text-gray-700" />
+              ) : (
+                <Menu size={24} className="text-gray-700" />
+              )}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {open && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-xl border-t border-gray-200/50 rounded-b-2xl overflow-hidden">
+          <div className="fixed top-20 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-xl border-t border-gray-200/50 rounded-b-2xl overflow-hidden md:hidden">
             <div className="px-6 py-4 space-y-2">
               {menu.map((item) => (
                 <Link
@@ -124,7 +132,7 @@ const Navbar: React.FC = () => {
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-gray-200/50">
                 <Link
