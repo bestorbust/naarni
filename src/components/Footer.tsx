@@ -3,13 +3,13 @@ import { Linkedin, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
-  const palette = {
-    bg: "#F9F7F7",
-    secondary: "#DBE2EF",
-    primary: "#3F72AF",
-    dark: "#DBE2EF",
-    text: "#F9F7F7",
-  };
+  // const palette = {
+  //   bg: "#F9F7F7",
+  //   secondary: "#DBE2EF",
+  //   primary: "#3F72AF",
+  //   dark: "#DBE2EF",
+  //   text: "#F9F7F7",
+  // };
 
   return (
     <footer
