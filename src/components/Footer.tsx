@@ -43,10 +43,10 @@ const Footer: React.FC = () => {
                 <Mail size={16} className="text-blue-200" />
                 <span>contact@naarni.com</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm opacity-80">
+              {/* <div className="flex items-center space-x-3 text-sm opacity-80">
                 <Phone size={16} className="text-blue-200" />
                 <span>+91 98765 43210</span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-3 text-sm opacity-80">
                 <MapPin size={16} className="text-blue-200" />
                 <span>Banglore, India</span>
