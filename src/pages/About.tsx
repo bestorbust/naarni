@@ -12,9 +12,12 @@ import { InView } from "react-intersection-observer";
 import Footer from "../components/Footer";
 import AnkitImg from "../assets/founders/ankit.jpg";
 import AnandImg from "../assets/founders/anand.jpg";
-import EVBus from "../assets/lotties/ev-bus.json";
-import EVTruck from "../assets/lotties/ev-truck.json";
+// import EVBus from "../assets/lotties/ev-bus.json";
+// import EVTruck from "../assets/lotties/ev-truck.json";
 import { Linkedin } from "lucide-react";
+import b3 from "../assets/about/b3.png";
+import b2 from "../assets/about/b2.png";
+import b1 from "../assets/about/b1.jpg";
 
 const cardStyle: React.CSSProperties = {
   backgroundColor: "rgba(255,255,255,0.05)",
@@ -79,7 +82,7 @@ const About: React.FC = () => {
       year: "2015 - 2021",
       title: "Mozev: India's First Intercity EV Bus OEM",
       details: ["25 Buses deployed with BYD", "Pipeline of 150 buses"],
-      anim: EVBus,
+      image: b1,
     },
     {
       year: "2021 - Now",
@@ -89,7 +92,7 @@ const About: React.FC = () => {
         "100M+ km runs | 500 km+ per day",
         "Largest intercity EV bus operator in India",
       ],
-      anim: EVBus,
+      image: b2,
     },
     {
       year: "2024 - Now",
@@ -99,7 +102,7 @@ const About: React.FC = () => {
         "Helping operators switch to EV",
         "Trucks coming soon!",
       ],
-      anim: EVTruck,
+      image: b3,
     },
   ];
 
@@ -256,7 +259,8 @@ const About: React.FC = () => {
                     <div className="flex flex-col lg:flex-row items-center gap-8">
                       <div className="flex-shrink-0">
                         <div className="w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center shadow-lg">
-                          <Lottie loop={false} play animationData={item.anim} className="w-20 h-20" />
+                          {/* <Lottie loop={false} play animationData={item.anim} className="w-20 h-20" /> */}
+                          <img src={item.image} alt="visual" className="w-20 h-20 object-contain" />
                         </div>
                       </div>
                       <div className="flex-1 text-center lg:text-left">
