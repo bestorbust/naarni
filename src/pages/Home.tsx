@@ -188,7 +188,7 @@ const Home: React.FC = () => {
       </section> */}
 
       {/* Fleet Operators' Concerns */}
-      <section className="py-20 bg-[#CBD5E1]/30">
+      <section className="py-20 bg-[#fff]/30">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div
@@ -233,7 +233,7 @@ const Home: React.FC = () => {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-6 bg-white border border-[#CBD5E1] rounded-xl shadow hover:shadow-lg hover:scale-[1.03] transition-all duration-300 flex flex-col items-center text-center"
+                    className="p-6 bg-white border border-[#fff] rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-500 ease-out flex flex-col items-center text-center relative group before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r before:from-blue-500/20 before:via-purple-500/20 before:to-blue-500/20 before:opacity-0 before:transition-opacity before:duration-500 before:group-hover:opacity-100 before:-z-10 after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-r after:from-blue-400/10 after:via-purple-400/10 after:to-blue-400/10 after:opacity-0 after:transition-opacity after:duration-500 after:group-hover:opacity-100 after:-z-20"
                   >
                     <div className="text-[#1E40AF] mb-4">{item.icon}</div>
                     <h3 className="text-xl font-semibold text-[#1E40AF] mb-2">{item.title}</h3>
@@ -247,7 +247,7 @@ const Home: React.FC = () => {
       </section>
 
       {/*  NaArNi Ecosystem Solutions */}
-      <section className="py-20 bg-[#CBD5E1]/30">
+      <section className="py-20 bg-[#fff]/30">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div

@@ -45,9 +45,9 @@ const TrackRecord: React.FC = () => {
 
   const marketStats = [
     { value: "$2 Tn", label: "HCV Market Opportunity" },
-    { value: "5 Mn", label: "Heavy Vehicles in India" },
-    { value: "40%", label: "Diesel Consumption by HCVs" },
-    { value: "80%", label: "Operator’s Running Cost" },
+    { value: "5 Mn", label: "VEHICLES IN INDIA ARE HCV" },
+    { value: "40%", label: "CONTRIBUTION TO DIESEL CONSUMPTION" },
+    { value: "80%", label: "OF OPERATOR'S EXPENSES IS  RUNNING COST" },
   ];
 
   return (

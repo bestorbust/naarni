@@ -14,7 +14,7 @@ import AnkitImg from "../assets/founders/ankit.jpg";
 import AnandImg from "../assets/founders/anand.jpg";
 import EVBus from "../assets/lotties/ev-bus.json";
 import EVTruck from "../assets/lotties/ev-truck.json";
-import { LinkedinIcon } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const cardStyle: React.CSSProperties = {
   backgroundColor: "rgba(255,255,255,0.05)",
@@ -105,10 +105,10 @@ const About: React.FC = () => {
 
   const marketStats = [
     { value: "$2 Tn", label: "HCV Market Opportunity" },
-    { value: "5 Mn", label: "Heavy Vehicles in India" },
-    { value: "40%", label: "Diesel Consumption by HCVs" },
+    { value: "5 Mn", label: "VEHICLES IN INDIA ARE HCV" },
+    { value: "40%", label: "CONTRIBUTION TO DIESEL CONSUMPTION" },
     { value: "1 Mn", label: "Fleet Operators" },
-    { value: "80%", label: "Of Operator’s expenses is Running Cost" },
+    { value: "80%", label: "OF OPERATOR'S EXPENSES IS  RUNNING COST" },
   ];
 
   return (
@@ -123,63 +123,70 @@ const About: React.FC = () => {
             } flex flex-col items-center justify-between w-full px-6 py-20`}
           >
             <div
-              className="w-full md:w-4/5 text-center md:text-left p-6 rounded"
+              className="w-full md:w-4/5 text-center md:text-left p-8 rounded-2xl shadow-lg"
               style={cardStyle}
             >
               <h1 className="text-4xl md:text-6xl font-bold leading-snug text-[#1E3A8A] text-center">
                 About {" "}
-                <span className="px-3 rounded bg-[#3B82F6] text-white">NaArNi</span>
+                <span className="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/25">
+                  NaArNi
+                </span>
               </h1>
-              {/* <p className="mt-4 text-center md:text-left mx-auto max-w-xl text-[#374151]">
+              <p className="mt-6 text-center mx-auto max-w-2xl text-[#374151] text-lg leading-relaxed">
                 NaArNi is transforming{" "}
                 <strong>Heavy Commercial Vehicles (HCVs)</strong> with best-in-class
                 electric buses. Our mission is to make{" "}
                 <strong>EVs the default choice for fleet operators</strong> through
                 reliable products, cost-effective financing, maintenance, and charging solutions.
-              </p> */}
+              </p>
             </div>
           </section>
         )}
       </InView>
 
       {/* Founders Section */}
-      <section className="py-16 bg-[#CBD5E1]/30">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div
               ref={ref}
               className={`transition-all duration-1000 ease-out transform ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              } max-w-6xl mx-auto px-6`}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF]">
+              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF] mb-4">
                 Meet Our Founders
               </h2>
-              <p className="text-center text-[#374151] mt-2">
-                Founders are Second Time Entrepreneurs in the Electric Vehicle Space
+              <p className="text-center text-[#374151] text-lg mb-12">
+                Second Time Entrepreneurs in the Electric Vehicle Space
               </p>
-              <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto mt-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {founders.map((f, i) => (
                   <div
                     key={i}
-                    className="rounded-xl p-6 w-72 text-center shadow hover:shadow-lg hover:scale-105 transition bg-white"
+                    className="group relative p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 ease-out bg-white border border-gray-100"
                   >
-                    <img
-                      src={f.img}
-                      alt={f.name}
-                      className="w-28 h-28 mx-auto rounded-full object-cover border-4 border-[#3B82F6]/60"
-                    />
-                    <h3 className="mt-4 text-[#1E40AF] font-semibold">{f.name}</h3>
-                    <p className="text-[#111827] text-sm">{f.role}</p>
-                    <p className="text-[#6B7280] text-xs mt-2">{f.bio}</p>
-                    <a
-                      href={f.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-block bg-[#3B82F6] text-white text-sm px-4 py-2 rounded-lg hover:bg-[#1E40AF] transition"
-                    >
-                      <LinkedinIcon/>
-                    </a>
+                    <div className="text-center">
+                      <div className="relative inline-block mb-6">
+                        <img
+                          src={f.img}
+                          alt={f.name}
+                          className="w-32 h-32 rounded-full object-cover border-4 border-blue-200 shadow-lg group-hover:border-blue-300 transition-all duration-300"
+                        />
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <h3 className="text-2xl font-bold text-[#1E40AF] mb-2">{f.name}</h3>
+                      <p className="text-[#3B82F6] font-semibold text-lg mb-3">{f.role}</p>
+                      <p className="text-[#6B7280] text-sm leading-relaxed mb-6">{f.bio}</p>
+                      <a
+                        href={f.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300"
+                      >
+                        <Linkedin size={18} />
+                      </a>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -189,26 +196,33 @@ const About: React.FC = () => {
       </section>
 
       {/* HCV Market Stats */}
-      <section className="py-16 bg-[#E2E8F0]">
+      <section className="py-20 bg-white">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div
               ref={ref}
               className={`transition-all duration-1000 ease-out transform ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              } max-w-6xl mx-auto px-4`}
+              } max-w-6xl mx-auto px-6`}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF]">
+              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF] mb-4">
                 The Heavy Commercial Vehicle Opportunity
               </h2>
-              <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-10">
+              <p className="text-center text-[#374151] text-lg mb-12 max-w-3xl mx-auto">
+                Understanding the massive market potential and the critical need for electrification in heavy commercial vehicles.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                 {marketStats.map((stats, i) => (
                   <div
                     key={i}
-                    className="w-36 sm:w-40 text-center rounded-xl p-4 shadow hover:shadow-lg hover:scale-105 transition bg-white"
+                    className="group p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 ease-out bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 text-center min-h-[180px] flex flex-col justify-center"
                   >
-                    <p className="text-xl font-bold text-[#1E40AF]">{stats.value}</p>
-                    <p className="text-[#374151] text-sm">{stats.label}</p>
+                    <p className="text-3xl md:text-4xl font-bold text-[#1E40AF] mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                      {stats.value}
+                    </p>
+                    <p className="text-[#374151] text-sm font-semibold leading-relaxed">
+                      {stats.label}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -218,35 +232,49 @@ const About: React.FC = () => {
       </section>
 
       {/* Milestones */}
-      <section className="py-16 bg-[#E2E8F0]">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div
               ref={ref}
               className={`transition-all duration-1000 ease-out transform ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              } max-w-6xl mx-auto px-4`}
+              } max-w-6xl mx-auto px-6`}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF]">
+              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF] mb-4">
                 Our Track Record In EV Buses
               </h2>
-              <div className="mt-10 space-y-8">
+              <p className="text-center text-[#374151] text-lg mb-12 max-w-3xl mx-auto">
+                A proven history of success in the electric vehicle industry with significant milestones and achievements.
+              </p>
+              <div className="space-y-8">
                 {milestones.map((item, i) => (
                   <div
                     key={i}
-                    className="flex flex-col md:flex-row items-center gap-6 p-6 rounded-xl shadow hover:shadow-lg hover:scale-105 transition bg-white"
+                    className="group p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 ease-out bg-white border border-gray-100"
                   >
-                    <div className="w-full md:w-1/3 flex justify-center">
-                      <Lottie loop={false} play animationData={item.anim} className="w-28 h-28" />
-                    </div>
-                    <div className="w-full md:w-2/3 text-center md:text-left">
-                      <p className="text-[#1E3A8A] font-bold text-sm">{item.year}</p>
-                      <h3 className="text-lg sm:text-xl font-semibold text-[#1E40AF]">{item.title}</h3>
-                      <ul className="mt-2 text-[#374151] list-disc list-inside text-sm">
-                        {item.details.map((point, j) => (
-                          <li key={j}>{point}</li>
-                        ))}
-                      </ul>
+                    <div className="flex flex-col lg:flex-row items-center gap-8">
+                      <div className="flex-shrink-0">
+                        <div className="w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center shadow-lg">
+                          <Lottie loop={false} play animationData={item.anim} className="w-20 h-20" />
+                        </div>
+                      </div>
+                      <div className="flex-1 text-center lg:text-left">
+                        <p className="text-[#3B82F6] font-bold text-sm mb-2 bg-blue-100 px-3 py-1 rounded-full inline-block">
+                          {item.year}
+                        </p>
+                        <h3 className="text-xl lg:text-2xl font-bold text-[#1E40AF] mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                          {item.title}
+                        </h3>
+                        <ul className="space-y-2 text-[#374151] text-sm lg:text-base">
+                          {item.details.map((point, j) => (
+                            <li key={j} className="flex items-start space-x-2">
+                              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -257,27 +285,36 @@ const About: React.FC = () => {
       </section>
 
       {/* Supporting Fleet Operators */}
-      <section className="py-16 bg-[#CBD5E1]/30">
+      <section className="py-20 bg-white">
         <InView triggerOnce threshold={0.1}>
           {({ inView, ref }) => (
             <div
               ref={ref}
               className={`transition-all duration-1000 ease-out transform ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              } max-w-6xl mx-auto px-6`}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF]">
+              <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF] mb-4">
                 Supporting Fleet Operators End-to-End
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mt-10 px-4">
+              <p className="text-center text-[#374151] text-lg mb-12 max-w-3xl mx-auto">
+                Comprehensive solutions that address every aspect of fleet electrification, from financing to maintenance.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {cards.map((item, i) => (
                   <div
                     key={i}
-                    className="rounded-xl shadow hover:shadow-lg hover:scale-105 transition p-6 text-center bg-white"
+                    className="group p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 ease-out bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 text-center"
                   >
-                    <Lottie loop={false} play animationData={item.anim} className="w-24 h-24 mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold text-[#1E40AF]">{item.title}</h3>
-                    <p className="text-[#111827] text-sm mt-2">{item.desc}</p>
+                    <div className="w-20 h-20 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                      <Lottie loop={false} play animationData={item.anim} className="w-12 h-12" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#1E40AF] mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-[#374151] text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
