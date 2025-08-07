@@ -196,7 +196,7 @@ const Footer: React.FC = () => {
           <p>
             © {new Date().getFullYear()} NaArNi — All rights reserved.
           </p>
-          <div className="flex space-x-6 text-sm">
+          <div className="flex space-x-6 text-sm mr-15">
             <Link to="/privacy-policy" className="hover:text-blue-200 transition-colors duration-300">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-blue-200 transition-colors duration-300">Terms of Service</Link>
             {/* <Link to="#" className="hover:text-blue-200 transition-colors duration-300">Cookie Policy</Link> */}
