@@ -10,8 +10,8 @@ const Navbar: React.FC = () => {
   const menu = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Products", link: "/products" },
-    { name: "Track Record", link: "/track-record" },
+    // { name: "Products", link: "/products" },
+    // { name: "Track Record", link: "/track-record" },
     { name: "Careers", link: "/careers" },
     { name: "Contact", link: "/contact" },
   ];

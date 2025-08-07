@@ -76,14 +76,14 @@ const Footer: React.FC = () => {
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link 
                   to="/products" 
                   className="text-[15px] opacity-80 hover:opacity-100 hover:text-blue-200 transition-all duration-300 inline-block hover:translate-x-1"
                 >
                   Products
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link 
                   to="/contact" 
@@ -109,14 +109,14 @@ const Footer: React.FC = () => {
                   Careers
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link 
                   to="/track-record" 
                   className="text-[15px] opacity-80 hover:opacity-100 hover:text-blue-200 transition-all duration-300 inline-block hover:translate-x-1"
                 >
                   Track Record
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <a 
                   href="#" 

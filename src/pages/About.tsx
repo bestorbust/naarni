@@ -260,7 +260,7 @@ const About: React.FC = () => {
                       <div className="flex-shrink-0">
                         <div className="w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl flex items-center justify-center shadow-lg">
                           {/* <Lottie loop={false} play animationData={item.anim} className="w-20 h-20" /> */}
-                          <img src={item.image} alt="visual" className="w-20 h-20 object-contain" />
+                          <img src={item.image} alt="visual" className="w-25 h-25 object-contain border bordered-md" />
                         </div>
                       </div>
                       <div className="flex-1 text-center lg:text-left">
