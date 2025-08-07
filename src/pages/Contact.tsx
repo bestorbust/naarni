@@ -72,9 +72,9 @@ const Contact: React.FC = () => {
                     value: "website@naarni.com",
                   },
                   {
-                    title: "Office Address",
+                    title: "Office Location ",
                     value:
-                      "HD-019, WeWork Vaishnavi Signature, No. 78/9 Outer Ring Road, Bellandur, Bangalore, Karnataka, India 560103",
+                      "6th floor, Sakti Statesman, Marathahalli - Sarjapur Outer Ring Rd, Green Glen Layout, Bellandur, Bengaluru, Karnataka 560103",
                   },
                 ].map((info, i) => (
                   <div

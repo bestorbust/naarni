@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.name}
                 to={item.link}
-                className={`relative group font-medium text-base px-4 py-3 rounded-xl transition-all duration-300 ${
+                className={`relative group font-medium text-base px-4 py-3 rounded-xl transition-all duration-300 mx-5 ${
                   isActive(item.link)
                     ? "text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg shadow-blue-500/25"
                     : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"

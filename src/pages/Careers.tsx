@@ -113,8 +113,8 @@ const Careers: React.FC = () => {
       </InView>
 
       
-//       {/* Open Positions */}
-//       {/* <InView triggerOnce threshold={0.2}>
+       {/* Open Positions */}
+       {/* <InView triggerOnce threshold={0.2}>
 //         {({ inView, ref }) => (
 //           <section
 //             ref={ref}

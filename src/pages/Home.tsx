@@ -27,10 +27,10 @@ const Home: React.FC = () => {
         title: "20% Market Share in HCVs",
         desc: "NaArNi to become a trusted leader in heavy commercial EVs.",
       },
-      {
-        title: "Best Value & Reliability",
-        desc: "NaArNi synonymous with reliability and lowest cost per km.",
-      },
+      // {
+      //   title: "Best Value & Reliability",
+      //   desc: "NaArNi synonymous with reliability and lowest cost per km.",
+      // },
     ];
   
   // const [offsetY, setOffsetY] = useState(0);

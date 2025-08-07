@@ -118,21 +118,21 @@ const Footer: React.FC = () => {
                 </Link>
               </li> */}
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/contact" 
                   className="text-[15px] opacity-80 hover:opacity-100 hover:text-blue-200 transition-all duration-300 inline-block hover:translate-x-1"
                 >
                   Support
-                </a>
+                </Link>
               </li>
-              <li>
+              {/* <li>
                 <a 
                   href="#" 
                   className="text-[15px] opacity-80 hover:opacity-100 hover:text-blue-200 transition-all duration-300 inline-block hover:translate-x-1"
                 >
                   Documentation
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -197,9 +197,9 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} NaArNi — All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="hover:text-blue-200 transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-blue-200 transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="hover:text-blue-200 transition-colors duration-300">Cookie Policy</a>
+            <Link to="/privacy-policy" className="hover:text-blue-200 transition-colors duration-300">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-blue-200 transition-colors duration-300">Terms of Service</Link>
+            <Link to="#" className="hover:text-blue-200 transition-colors duration-300">Cookie Policy</Link>
           </div>
         </div>
       </div>

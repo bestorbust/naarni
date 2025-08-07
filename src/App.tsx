@@ -5,6 +5,8 @@ import Contact from './pages/Contact';
 import Products from './pages/Products';
 import TrackRecord from './pages/TrackRecord';
 import Careers from './pages/Careers';
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 import Navbar from './components/Navbar';
 import ScrollToTop from "./components/ScrollToTop";
@@ -22,6 +24,8 @@ const App=()=>{
         <Route path="/products" element={<Products/>}/>
         <Route path="/track-record" element={<TrackRecord/>}/>
         <Route path="/careers" element={<Careers/>}/>
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+        <Route path="/terms" element={<TermsOfService/>}/>
       </Routes>
       <BackToTopButton/>
     </Router>

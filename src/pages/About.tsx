@@ -110,7 +110,7 @@ const About: React.FC = () => {
     { value: "$2 Tn", label: "HCV Market Opportunity" },
     { value: "5 Mn", label: "VEHICLES IN INDIA ARE HCV" },
     { value: "40%", label: "CONTRIBUTION TO DIESEL CONSUMPTION" },
-    { value: "1 Mn", label: "Fleet Operators" },
+    { value: "1 Mn", label: "BUS AND TRUCK OPERATORS" },
     { value: "80%", label: "OF OPERATOR'S EXPENSES IS  RUNNING COST" },
   ];
 
@@ -211,9 +211,9 @@ const About: React.FC = () => {
               <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1E40AF] mb-4">
                 The Heavy Commercial Vehicle Opportunity
               </h2>
-              <p className="text-center text-[#374151] text-lg mb-12 max-w-3xl mx-auto">
+              {/* <p className="text-center text-[#374151] text-lg mb-12 max-w-3xl mx-auto">
                 Understanding the massive market potential and the critical need for electrification in heavy commercial vehicles.
-              </p>
+              </p> */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                 {marketStats.map((stats, i) => (
                   <div
